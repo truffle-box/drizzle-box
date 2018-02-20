@@ -1,4 +1,4 @@
-# React Truffle Box
+# Drizzle Truffle Box
 
 This box comes with everything you need to start using smart contracts from a react app with Drizzle. It includes `drizzle`, `drizzle-react` and `drizzle-react-components` to give you a complete overview of Drizzle's capabilities.
 
@@ -23,8 +23,8 @@ This box comes with everything you need to start using smart contracts from a re
 
 4. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
     ```javascript
-    truffle compile
-    truffle migrate
+    compile
+    migrate
     ```
 
 5. Run the webpack server for front-end hot reloading (outside the development console). Smart contract changes must be manually recompiled and migrated.
@@ -65,7 +65,7 @@ This box comes with everything you need to start using smart contracts from a re
 
 * __Where is my production build?__
 
-    The production build will be in the build_webpack folder. This is because Truffle outputs contract compilations to the build folder.
+    The production build will be in the `build_webpack` folder. This is because Truffle outputs contract compilations to the `build` folder.
 
 * __Where can I find more documentation?__
 
