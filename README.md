@@ -57,7 +57,7 @@ This box comes with everything you need to start using smart contracts from a re
 
 * __Where do I find more information about Drizzle?__
 
-    Check out our [documentation](http://truffleframework.com/docs/drizzle/overview) or any of the three repositories ([`drizzle`](https://github.com/trufflesuite/drizzle), [`drizzle-react`](https://github.com/trufflesuite/drizzle-react), [`drizzle-react-components`](https://github.com/trufflesuite/drizzle-react-components)).
+    Check out our [documentation](http://truffleframework.com/docs/drizzle/getting-started) or any of the three repositories ([`drizzle`](https://github.com/trufflesuite/drizzle), [`drizzle-react`](https://github.com/trufflesuite/drizzle-react), [`drizzle-react-components`](https://github.com/trufflesuite/drizzle-react-components)).
 
 * __Why is there both a truffle.js file and a truffle-config.js file?__
 
