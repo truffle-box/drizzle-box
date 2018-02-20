@@ -1,4 +1,4 @@
-# React Truffle Box
+# Drizzle Truffle Box
 
 This box comes with everything you need to start using smart contracts from a react app with Drizzle. It includes `drizzle`, `drizzle-react` and `drizzle-react-components` to give you a complete overview of Drizzle's capabilities.
 
