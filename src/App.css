@@ -5,21 +5,26 @@ body,
   font-family: 'Open Sans', sans-serif;
 }
 
+.header {
+  text-align: center;
+}
+
 h1, h2, h3 {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
 }
 
 code {
-  display: block;
-  margin: 20px 0 15px 0;
-  padding: 10px;
+  padding: .25rem;
+  margin: 0 .25rem;
   background: #eee;
 }
 
 .container {
   box-sizing: border-box;
-  width: 100%;
+  width: calc(100% - 60px);
+  max-width: 600px;
   padding: 45px 20px;
+  margin: 0 auto;
 }
 
 .pure-button-primary {
@@ -32,6 +37,15 @@ code {
 
 .pure-form input[type="text"]:focus {
   border-color: #0c1a2b;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li:not(:last-child) {
+  margin-bottom: 15px;
 }
 
 /* NAVBAR */
@@ -78,4 +92,19 @@ code {
 .loading-screen.loaded {
   opacity: 0;
   visibility: hidden;
+}
+
+/* FORMS */
+
+.pure-form {
+  display: inline-block;
+}
+
+/* ALERTS */
+
+.alert {
+  padding: .5rem;
+  color: darkgreen;
+  background: darkseagreen;
+  border: 1px solid darkgreen;
 }

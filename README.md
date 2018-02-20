@@ -1,61 +1,67 @@
-# Drizzle Test Box
+# React Truffle Box
 
-All truffle boxes come with Truffle, Webpack and React. This box adds react-router, redux and redux-auth-wrapper for authentication powered by a smart contract. Great for building your own auth system.
-
-// Install boxes
-// Install geth
-  // Genesis params
-  // article Link
-// What this does
+This box comes with everything you need to start using smart contracts from a react app with Drizzle. It includes `drizzle`, `drizzle-react` and `drizzle-react-components` to give you a complete overview of Drizzle's capabilities.
 
 ## Installation
 
-1. Install truffle and an ethereum client. For local development, try EthereumJS TestRPC.
+1. Install Truffle and Ganache CLI globally. If you prefer, the graphical version of Ganache works as well!
     ```javascript
-    npm install -g truffle // Version 3.0.5+ required.
-    npm install -g ethereumjs-testrpc
+    npm install -g truffle
+    npm install -g ganache-cli
     ```
 
-2. Clone or download the truffle box of your choice.
+2. Download the box. This also takes care of installing the necessary dependencies.
     ```javascript
-    git clone [repo]
+    truffle unbox drizzle
     ```
 
-3. Install the node dependencies.
+3. Run the development blockchain, we recommend passing in a blocktime. Otherwise, its difficult to track things like loading indicators because Ganache will mine instantly.
     ```javascript
-    npm install
+    // 3 second blocktime.
+    ganache-cli -b 3
     ```
 
-4. Compile and migrate the contracts.
+4. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
     ```javascript
     truffle compile
     truffle migrate
     ```
 
-5. Run the webpack server for front-end hot reloading. For now, smart contract changes must be manually recompiled and migrated.
+5. Run the webpack server for front-end hot reloading (outside the development console). Smart contract changes must be manually recompiled and migrated.
     ```javascript
+    // Serves the front-end on http://localhost:3000
     npm run start
     ```
 
-6. Jest is included for testing React components and Truffle's own suite is incldued for smart contracts. Be sure you've compile your contracts before running jest, or you'll receive some file not found errors.
+6. Truffle can run tests written in Solidity or JavaScript against your smart contracts. Note the command varies slightly if you're in or outside of the development console.
     ```javascript
-    // Runs Jest for component tests.
-    npm run test
+    // If inside the development console.
+    test
 
-    // Runs Truffle's test suite for smart contract tests.
+    // If outside the development console..
     truffle test
     ```
 
-7. To build the application for production, use the build command. A production build will be in the build_webpack folder.
+7. Jest is included for testing React components. Compile your contracts before running Jest, or you may receive some file not found errors.
+    ```javascript
+    // Run Jest outside of the development console for front-end component tests.
+    npm run test
+    ```
+
+8. To build the application for production, use the build command. A production build will be in the build_webpack folder.
     ```javascript
     npm run build
     ```
 
 ## FAQ
 
+* __Where do I find more information about Drizzle?__
+
+    Check out our [documentation](http://truffleframework.com/docs/drizzle/overview) or any of the three repositories ([`drizzle`](https://github.com/trufflesuite/drizzle), [`drizzle-react`](https://github.com/trufflesuite/drizzle-react), [`drizzle-react-components`](https://github.com/trufflesuite/drizzle-react-components)).
+
 * __Why is there both a truffle.js file and a truffle-config.js file?__
 
-    Truffle requires the truffle.js file be named truffle-config on Windows machines. Feel free to delete the file that doesn't correspond to your platform.
+    `truffle-config.js` is a copy of `truffle.js` for compatibility with Windows development environments. Feel free to it if it's irrelevant to your platform.
 
 * __Where is my production build?__
 
@@ -63,4 +69,4 @@ All truffle boxes come with Truffle, Webpack and React. This box adds react-rout
 
 * __Where can I find more documentation?__
 
-    All truffle boxes are a marriage of [Truffle](http://truffleframework.com/) and a React setup created with [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Either one would be a great place to start!
+    This box is a marriage of [Truffle](http://truffleframework.com/) and a React setup created with [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Either one would be a great place to start!

@@ -3,18 +3,15 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { syncHistoryWithStore } from 'react-router-redux'
-import { UserIsAuthenticated, UserIsNotAuthenticated } from './util/wrappers.js'
 import { DrizzleProvider } from 'drizzle-react'
 
 // Layouts
 import App from './App'
 import HomeContainer from './layouts/home/HomeContainer'
-import Dashboard from './layouts/dashboard/Dashboard'
-import SignUp from './user/layouts/signup/SignUp'
-import Profile from './user/layouts/profile/Profile'
 import LoadingContainer from './layouts/loading/LoadingContainer'
 
 // Contracts
+import ComplexStorage from './../build/contracts/ComplexStorage.json'
 import SimpleStorage from './../build/contracts/SimpleStorage.json'
 import TutorialToken from './../build/contracts/TutorialToken.json'
 
@@ -30,13 +27,17 @@ const options = {
     block: false,
     fallback: {
       type: 'ws',
-      url: 'ws://127.0.0.1:8546'
+      url: 'ws://127.0.0.1:8545'
     }
   },
   contracts: [
+    ComplexStorage,
     SimpleStorage,
     TutorialToken
-  ]
+  ],
+  events: {
+    SimpleStorage: ['StorageSet']
+  }
 }
 
 ReactDOM.render((
@@ -46,9 +47,6 @@ ReactDOM.render((
           <Router history={history}>
             <Route path="/" component={App}>
               <IndexRoute component={HomeContainer} />
-              <Route path="dashboard" component={UserIsAuthenticated(Dashboard)} />
-              <Route path="signup" component={UserIsNotAuthenticated(SignUp)} />
-              <Route path="profile" component={UserIsAuthenticated(Profile)} />
             </Route>
           </Router>
         </LoadingContainer>
