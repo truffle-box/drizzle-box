@@ -1,6 +1,6 @@
-var SimpleStorage = artifacts.require("./SimpleStorage.sol");
-var TutorialToken = artifacts.require("./TutorialToken.sol");
-var ComplexStorage = artifacts.require("./ComplexStorage.sol");
+var SimpleStorage = artifacts.require("SimpleStorage");
+var TutorialToken = artifacts.require("TutorialToken");
+var ComplexStorage = artifacts.require("ComplexStorage");
 
 module.exports = function(deployer) {
   deployer.deploy(SimpleStorage);
