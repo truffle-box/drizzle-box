@@ -35,6 +35,7 @@
     "jest": "17.0.2",
     "json-loader": "0.5.4",
     "object-assign": "4.1.0",
+    "openzeppelin-solidity": "^1.9.0",
     "path-exists": "2.1.0",
     "postcss-loader": "1.0.0",
     "promise": "7.1.1",
@@ -48,8 +49,7 @@
     "webpack": "1.14.0",
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "1.0.0",
-    "zeppelin-solidity": "^1.6.0"
+    "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
     "eth-block-tracker-es5": "^2.3.2",
