@@ -24,25 +24,21 @@ contract ComplexStorage {
 		string batteryWearLevel;
 	}
 
-	function ComplexStorage() public {
+	constructor() public {
 		address address1 = 0xbCcc714d56bc0da0fd33d96d2a87b680dD6D0DF6;
 		address address2 = 0xaee905FdD3ED851e48d22059575b9F4245A82B04;
 
 		uints1[address1] = 88;
 		uints1[address2] = 99;
 
-		var dev1 = DeviceData("deviceBrand", "deviceYear", "wearLevel");
-		var dev2 = DeviceData("deviceBrand2", "deviceYear2", "wearLevel2");
-        var dev3 = DeviceData("deviceBrand3", "deviceYear3", "wearLevel3");
-
-		structs1[address1] = dev1;
-		structs1[address2] = dev2;
-        singleDD = dev3;
+		structs1[address1] = DeviceData("deviceBrand", "deviceYear", "wearLevel");
+		structs1[address2] = DeviceData("deviceBrand2", "deviceYear2", "wearLevel2");
+        singleDD = DeviceData("deviceBrand3", "deviceYear3", "wearLevel3");
 
 		uintarray.push(8000);
 		uintarray.push(9000);
 
-		deviceDataArray.push(dev1);
-		deviceDataArray.push(dev2);
+		deviceDataArray.push(structs1[address1]);
+		deviceDataArray.push(structs1[address2]);
 	}
 }
