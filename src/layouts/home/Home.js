@@ -14,7 +14,7 @@ class Home extends Component {
 
             <br/><br/>
           </div>
-        
+
           <div className="pure-u-1-1">
             <h2>Active Account</h2>
             <AccountData accountIndex="0" units="ether" precision="3" />
