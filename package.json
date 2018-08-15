@@ -2,15 +2,15 @@
   "name": "drizzle-box",
   "version": "1.0.0",
   "devDependencies": {
-    "drizzle": "^1.2.2",
-    "drizzle-react": "^1.1.1",
-    "drizzle-react-components": "^1.1.0",
-    "ganache-cli": "^6.1.5",
+    "ganache-cli": "^6.1.6",
     "openzeppelin-solidity": "^1.10.0",
     "truffle": "^4.1.13",
     "truffle-hdwallet-provider": "^0.0.5"
   },
   "dependencies": {
+    "drizzle": "^1.2.2",
+    "drizzle-react": "^1.1.1",
+    "drizzle-react-components": "^1.2.0",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
