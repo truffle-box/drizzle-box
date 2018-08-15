@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router'
+import HomeContainer from './layouts/home/HomeContainer'
+
 
 // Styles
 import './css/oswald.css'
@@ -10,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.props.children}
+        <Route exact path="/" component={HomeContainer}/>
       </div>
     );
   }
