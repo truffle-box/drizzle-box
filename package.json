@@ -8,7 +8,7 @@
     "truffle-hdwallet-provider": "^0.0.5"
   },
   "dependencies": {
-    "drizzle": "^1.2.2",
+    "drizzle": "^1.2.5",
     "drizzle-react": "^1.1.1",
     "drizzle-react-components": "^1.2.0",
     "autoprefixer": "7.1.6",
