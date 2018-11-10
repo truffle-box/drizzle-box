@@ -27,7 +27,7 @@ This box comes with everything you need to start using smart contracts from a re
     truffle migrate
     ```
 
-5. Run the webpack server for front-end hot reloading (outside the development console). Smart contract changes must be manually recompiled and migrated.
+5. Run the webpack server for front-end hot reloading. Smart contract changes must be manually recompiled and migrated.
     ```javascript
     // Serves the front-end on http://localhost:3000
     npm run start
