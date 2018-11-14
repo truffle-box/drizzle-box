@@ -70,3 +70,7 @@ This box comes with everything you need to start using smart contracts from a re
 * __Where can I find more documentation?__
 
     This box is a marriage of [Truffle](http://truffleframework.com/) and a React setup created with [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Either one would be a great place to start!
+
+* __I'm trying to run `truffle unbox drizzle` in my CI environment but my build keeps failing. How can I fix it?__
+
+   We're treating warnings as errors when the env variable `CI` is set to `true`. If this is affecting your ability to unbox drizzle in your CI environment, you can set the variable `IGNORE_DRIZZLE_BOX_WARNINGS=true` and warnings won't be treated as errors anymore during unboxing.
