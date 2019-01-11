@@ -8,6 +8,9 @@
     "truffle-hdwallet-provider": "^0.0.5"
   },
   "dependencies": {
+    "drizzle": "^1.2.5",
+    "drizzle-react": "^1.1.1",
+    "drizzle-react-components": "^1.2.0",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -20,9 +23,6 @@
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
-    "drizzle": "^1.2.5",
-    "drizzle-react": "^1.1.1",
-    "drizzle-react-components": "^1.2.1",
     "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
