@@ -15,19 +15,19 @@ This box comes with everything you need to start using smart contracts from a re
     truffle unbox drizzle
     ```
 
-3. Run the development blockchain, we recommend passing in a blocktime. Otherwise, its difficult to track things like loading indicators because Ganache will mine instantly.
+3. Run the development blockchain. We recommend passing in a blocktime. Otherwise, its difficult to track things like loading indicators because Ganache will mine instantly.
     ```javascript
     // 3 second blocktime.
     ganache-cli -b 3
     ```
 
-4. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
+4. In another terminal window, compile and migrate the smart contracts. 
     ```javascript
-    compile
-    migrate
+    truffle compile
+    truffle migrate
     ```
 
-5. Run the webpack server for front-end hot reloading (outside the development console). Smart contract changes must be manually recompiled and migrated.
+5. Run the webpack server for front-end hot reloading. Smart contract changes must be manually recompiled and migrated.
     ```javascript
     // Serves the front-end on http://localhost:3000
     npm run start
