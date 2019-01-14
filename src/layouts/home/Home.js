@@ -25,7 +25,7 @@ class Home extends Component {
   }
 
   deleteContract = () => {
-    const { contractNameToAdd: contractName } = this.state;
+    const { contractNameToDelete: contractName } = this.state;
     if (this.props.contracts[contractName]) {
       this.context.drizzle.deleteContract(contractName)
     }
