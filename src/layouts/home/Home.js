@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { AccountData, ContractData, ContractForm } from 'drizzle-react-components'
+import PropTypes from 'prop-types'
 import logo from '../../logo.png'
 import addedContractAbi from './addedContractAbi';
 
@@ -122,3 +123,8 @@ class Home extends Component {
 }
 
 export default Home
+
+Home.contextTypes = {
+  drizzle: PropTypes.object,
+  drizzleStore: PropTypes.object
+};
