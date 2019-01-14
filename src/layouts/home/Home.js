@@ -7,12 +7,12 @@ import addedContractAbi from './addedContractAbi';
 const contractName = "AddedToken";
 class Home extends Component {
   state = {
-    addedContractAddress: ''
+    addedContractAddress: '',
+    contractNameToDelete: ''
   }
 
-  handleAddedContractAddressChange = (event) => {
-    this.setState({ addedContractAddress: event.target.value })
-  }
+  handleAddedContractAddressChange = (event) => this.setState({ addedContractAddress: event.target.value })
+  handleContractNameToDeleteChange = (event) => this.setState({ contractNameToDelete: event.target.value })
 
   addContract = () => {
     if (!this.props.contracts[contractName]) {
@@ -20,6 +20,12 @@ class Home extends Component {
         contractName,
         web3Contract: new this.context.drizzle.web3.eth.Contract(addedContractAbi, this.state.addedContractAddress)
       })
+    }
+  }
+
+  deleteContract = () => {
+    if (this.props.contracts[contractName]) {
+      this.context.drizzle.deleteContract(contractName)
     }
   }
 
@@ -103,6 +109,21 @@ class Home extends Component {
               Add Token Contract
             </button>
             {this.renderAddedContract()}
+
+            <input type="text" value={this.state.contractNameToDelete} onChange={this.handleContractNameToDeleteChange} />
+            <button
+              className="pure-button"
+              onClick={this.deleteContract}
+            >
+              Delete contract
+            </button>
+
+            <button
+              className="pure-button"
+              onClick={() => console.log(this.context.drizzle)}
+            >
+              Log Drizzle
+            </button>
             <br />
             <br />
           </div>
@@ -117,7 +138,7 @@ class Home extends Component {
             <br /><br />
           </div>
         </div>
-      </main>
+      </main >
     )
   }
 }
