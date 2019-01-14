@@ -1,8 +1,55 @@
 import React, { Component } from 'react'
 import { AccountData, ContractData, ContractForm } from 'drizzle-react-components'
 import logo from '../../logo.png'
+import addedContractAbi from './addedContractAbi';
 
+const contractName = "AddedToken";
 class Home extends Component {
+  state = {
+    addedContractAddress: ''
+  }
+
+  handleAddedContractAddressChange = (event) => {
+    this.setState({ addedContractAddress: event.target.value })
+  }
+
+  addContract = () => {
+    if (!this.props.contracts[contractName]) {
+      this.context.drizzle.addContract({
+        contractName,
+        web3Contract: new this.context.drizzle.web3.eth.Contract(addedContractAbi, this.state.addedContractAddress)
+      })
+    }
+  }
+
+  renderAddedContract = () => {
+    console.log(this.context)
+    if (!this.props.contracts[contractName]) return null;
+
+    return (
+      <span>
+        <p>
+          <strong>Total Supply</strong>:{" "}
+          <ContractData
+            contract={contractName}
+            method="totalSupply"
+            methodArgs={[{ from: this.props.accounts[0] }]}
+          />{" "}
+          <ContractData contract={contractName} method="symbol" hideIndicator />
+        </p>
+        <p>
+          <strong>My Balance</strong>:{" "}
+          <ContractData
+            contract={contractName}
+            method="balanceOf"
+            methodArgs={[this.props.accounts[0]]}
+          />{" "}
+          <ContractData contract={contractName} method="symbol" hideIndicator />
+        </p>
+      </span>
+    );
+  }
+
   render() {
     return (
       <main className="container">
@@ -34,12 +81,30 @@ class Home extends Component {
           <div className="pure-u-1-1">
             <h2>TutorialToken</h2>
             <p>Here we have a form with custom, friendly labels. Also note the token symbol will not display a loading indicator. We've suppressed it with the <code>hideIndicator</code> prop because we know this variable is constant.</p>
-            <p><strong>Total Supply</strong>: <ContractData contract="TutorialToken" method="totalSupply" methodArgs={[{from: this.props.accounts[0]}]} /> <ContractData contract="TutorialToken" method="symbol" hideIndicator /></p>
+            <p><strong>Total Supply</strong>: <ContractData contract="TutorialToken" method="totalSupply" methodArgs={[{ from: this.props.accounts[0] }]} /> <ContractData contract="TutorialToken" method="symbol" hideIndicator /></p>
             <p><strong>My Balance</strong>: <ContractData contract="TutorialToken" method="balanceOf" methodArgs={[this.props.accounts[0]]} /></p>
             <h3>Send Tokens</h3>
             <ContractForm contract="TutorialToken" method="transfer" labels={['To Address', 'Amount to Send']} />
 
-            <br/><br/>
+            <br /><br />
+          </div>
+
+          <div className="pure-u-1-1">
+            <h2>Dynamically Added Contract</h2>
+            <p>
+              Click the button below to dynamically add the token contract
+              and check your balance (of tokens).
+            </p>
+            <input type="text" value={this.state.addedContractAddress} onChange={this.handleAddedContractAddressChange} />
+            <button
+              className="pure-button"
+              onClick={this.addContract}
+            >
+              Add Token Contract
+            </button>
+            {this.renderAddedContract()}
+            <br />
+            <br />
           </div>
 
           <div className="pure-u-1-1">
