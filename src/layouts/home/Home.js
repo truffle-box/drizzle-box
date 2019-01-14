@@ -99,9 +99,9 @@ class Home extends Component {
             <h2>Dynamically Added Contract</h2>
             <p>
               Click the button below to dynamically add the token contract
-              and check your balance (of tokens).
+              and check your balance (of tokens). Contract's name will be AddedToken.
             </p>
-            <input type="text" value={this.state.addedContractAddress} onChange={this.handleAddedContractAddressChange} />
+            <input type="text" placeholder="Contract to add" value={this.state.addedContractAddress} onChange={this.handleAddedContractAddressChange} />
             <button
               className="pure-button"
               onClick={this.addContract}
@@ -110,7 +110,7 @@ class Home extends Component {
             </button>
             {this.renderAddedContract()}
 
-            <input type="text" value={this.state.contractNameToDelete} onChange={this.handleContractNameToDeleteChange} />
+            <input type="text" placeholder="Contract name to delete" value={this.state.contractNameToDelete} onChange={this.handleContractNameToDeleteChange} />
             <button
               className="pure-button"
               onClick={this.deleteContract}
@@ -118,6 +118,7 @@ class Home extends Component {
               Delete contract
             </button>
 
+            <p>Log Drizzle object to the console to compare states before and after adding/deleting a contract.</p>
             <button
               className="pure-button"
               onClick={() => console.log(this.context.drizzle)}
