@@ -3,33 +3,36 @@ import { AccountData, ContractData, ContractForm } from 'drizzle-react-component
 import PropTypes from 'prop-types'
 import logo from '../../logo.png'
 import addedContractAbi from './addedContractAbi';
-
-const contractName = "AddedToken";
 class Home extends Component {
   state = {
     addedContractAddress: '',
-    contractNameToDelete: ''
+    contractNameToDelete: '',
+    contractNameToAdd: '',
   }
 
   handleAddedContractAddressChange = (event) => this.setState({ addedContractAddress: event.target.value })
   handleContractNameToDeleteChange = (event) => this.setState({ contractNameToDelete: event.target.value })
+  handleContractNameToAddChange = (event) => this.setState({ contractNameToAdd: event.target.value })
 
   addContract = () => {
+    const { contractNameToAdd: contractName } = this.state;
     if (!this.props.contracts[contractName]) {
       this.context.drizzle.addContract({
-        contractName,
+        contractName: this.state.contractNameToAdd,
         web3Contract: new this.context.drizzle.web3.eth.Contract(addedContractAbi, this.state.addedContractAddress)
       })
     }
   }
 
   deleteContract = () => {
+    const { contractNameToAdd: contractName } = this.state;
     if (this.props.contracts[contractName]) {
       this.context.drizzle.deleteContract(contractName)
     }
   }
 
   renderAddedContract = () => {
+    const { contractNameToAdd: contractName } = this.state;
     if (!this.props.contracts[contractName]) return null;
 
     return (
@@ -99,18 +102,27 @@ class Home extends Component {
             <h2>Dynamically Added Contract</h2>
             <p>
               Click the button below to dynamically add the token contract
-              and check your balance (of tokens). Contract's name will be AddedToken.
+              and check your balance (of tokens).
             </p>
-            <input type="text" placeholder="Contract to add" value={this.state.addedContractAddress} onChange={this.handleAddedContractAddressChange} />
+            <input type="text" placeholder="Contract address to add" value={this.state.addedContractAddress} onChange={this.handleAddedContractAddressChange} />
+            <br />
+            <br />
+            <input type="text" placeholder="Contract name to add" value={this.state.contractNameToAdd} onChange={this.handleContractNameToAddChange} />
+            <br />
+            <br />
             <button
               className="pure-button"
               onClick={this.addContract}
             >
               Add Token Contract
             </button>
-            {this.renderAddedContract()}
 
+            {this.renderAddedContract()}
+            <br />
+            <br />
             <input type="text" placeholder="Contract name to delete" value={this.state.contractNameToDelete} onChange={this.handleContractNameToDeleteChange} />
+            <br />
+            <br />
             <button
               className="pure-button"
               onClick={this.deleteContract}
