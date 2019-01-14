@@ -23,7 +23,6 @@ class Home extends Component {
   }
 
   renderAddedContract = () => {
-    console.log(this.context)
     if (!this.props.contracts[contractName]) return null;
 
     return (
@@ -59,14 +58,14 @@ class Home extends Component {
             <h1>Drizzle Examples</h1>
             <p>Examples of how to get started with Drizzle in various situations.</p>
 
-            <br/><br/>
+            <br /><br />
           </div>
 
           <div className="pure-u-1-1">
             <h2>Active Account</h2>
             <AccountData accountIndex="0" units="ether" precision="3" />
 
-            <br/><br/>
+            <br /><br />
           </div>
 
           <div className="pure-u-1-1">
@@ -75,7 +74,7 @@ class Home extends Component {
             <p><strong>Stored Value</strong>: <ContractData contract="SimpleStorage" method="storedData" /></p>
             <ContractForm contract="SimpleStorage" method="set" />
 
-            <br/><br/>
+            <br /><br />
           </div>
 
           <div className="pure-u-1-1">
@@ -114,7 +113,7 @@ class Home extends Component {
             <p><strong>String 2</strong>: <ContractData contract="ComplexStorage" method="string2" toUtf8 /></p>
             <strong>Single Device Data</strong>: <ContractData contract="ComplexStorage" method="singleDD" />
 
-            <br/><br/>
+            <br /><br />
           </div>
         </div>
       </main>
