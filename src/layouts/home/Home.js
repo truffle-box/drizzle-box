@@ -5,12 +5,12 @@ import logo from '../../logo.png'
 import addedContractAbi from './addedContractAbi';
 class Home extends Component {
   state = {
-    addedContractAddress: '',
+    contractAddressToAdd: '',
     contractNameToDelete: '',
     contractNameToAdd: '',
   }
 
-  handleAddedContractAddressChange = (event) => this.setState({ addedContractAddress: event.target.value })
+  handleContractAddressToAddChange = (event) => this.setState({ contractAddressToAdd: event.target.value })
   handleContractNameToDeleteChange = (event) => this.setState({ contractNameToDelete: event.target.value })
   handleContractNameToAddChange = (event) => this.setState({ contractNameToAdd: event.target.value })
 
@@ -19,7 +19,7 @@ class Home extends Component {
     if (!this.props.contracts[contractName]) {
       this.context.drizzle.addContract({
         contractName: this.state.contractNameToAdd,
-        web3Contract: new this.context.drizzle.web3.eth.Contract(addedContractAbi, this.state.addedContractAddress)
+        web3Contract: new this.context.drizzle.web3.eth.Contract(addedContractAbi, this.state.contractAddressToAdd)
       })
     }
   }
@@ -104,7 +104,7 @@ class Home extends Component {
               Click the button below to dynamically add the token contract
               and check your balance (of tokens).
             </p>
-            <input type="text" placeholder="Contract address to add" value={this.state.addedContractAddress} onChange={this.handleAddedContractAddressChange} />
+            <input type="text" placeholder="Contract address to add" value={this.state.contractAddressToAdd} onChange={this.handleContractAddressToAddChange} />
             <br />
             <br />
             <input type="text" placeholder="Contract name to add" value={this.state.contractNameToAdd} onChange={this.handleContractNameToAddChange} />
