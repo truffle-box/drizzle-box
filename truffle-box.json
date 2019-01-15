@@ -1,0 +1,20 @@
+{
+  "ignore": [
+    "README.md",
+    "box-img-lg.png",
+    "box-img-sm.png",
+    ".github",
+    "LICENSE"
+  ],
+  "commands": {
+    "Compile": "truffle compile",
+    "Migrate": "truffle migrate",
+    "Test contracts": "truffle test",
+    "Test dapp": "cd app && npm test",
+    "Run dev server": "cd app && npm run start",
+    "Build for production": "cd app && npm run build"
+  },
+  "hooks": {
+    "post-unpack": "npm install && cd app && npm install"
+  }
+}
