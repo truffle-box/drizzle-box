@@ -37,10 +37,10 @@ First ensure you are in a new and empty directory.
 
 6. Truffle can run tests written in Solidity or JavaScript against your smart contracts. Note the command varies slightly if you're in or outside of the development console.
     ```javascript
-    // inside the development console.
+    // inside the development console
     test
 
-    // outside the development console..
+    // outside the development console
     truffle test
     ```
 
