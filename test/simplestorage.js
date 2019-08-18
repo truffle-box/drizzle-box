@@ -8,7 +8,7 @@ contract('SimpleStorage', function(accounts) {
 
       return simpleStorageInstance.set(89, {from: accounts[0]});
     }).then(function() {
-      return simpleStorageInstance.storedData.call();
+      return simpleStorageInstance.get.call();
     }).then(function(storedData) {
       assert.equal(storedData, 89, "The value 89 was not stored.");
     });

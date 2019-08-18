@@ -13,7 +13,7 @@ contract TestSimpleStorage {
 
     uint expected = 89;
 
-    Assert.equal(simpleStorage.storedData(), expected, "It should store the value 89.");
+    Assert.equal(simpleStorage.get(), expected, "It should store the value 89.");
   }
 
 }
