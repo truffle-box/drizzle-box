@@ -52,7 +52,6 @@
     "zeppelin-solidity": "^1.6.0"
   },
   "dependencies": {
-    "eth-block-tracker-es5": "^2.3.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
@@ -61,8 +60,7 @@
     "redux": "^3.6.0",
     "redux-auth-wrapper": "^1.0.0",
     "redux-saga": "^0.15.3",
-    "redux-thunk": "^2.2.0",
-    "web3": "1.0.0-beta.34"
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
