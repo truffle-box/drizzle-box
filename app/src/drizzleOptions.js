@@ -1,3 +1,4 @@
+import Web3 from "web3";
 import SimpleStorage from "./contracts/SimpleStorage.json";
 import ComplexStorage from "./contracts/ComplexStorage.json";
 import TutorialToken from "./contracts/TutorialToken.json";
@@ -5,10 +6,7 @@ import TutorialToken from "./contracts/TutorialToken.json";
 const options = {
   web3: {
     block: false,
-    fallback: {
-      type: "ws",
-      url: "ws://127.0.0.1:8545",
-    },
+    customProvider: new Web3("ws://localhost:8545"),
   },
   contracts: [SimpleStorage, ComplexStorage, TutorialToken],
   events: {
