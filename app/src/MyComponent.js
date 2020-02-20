@@ -9,8 +9,7 @@ const {
 } = newContextComponents;
 
 
-export default (props) => {
-  const { drizzle, drizzleState } = props;
+export default ({ drizzle, drizzleState }) => { // destructure drizzle and drizzleState from props
   return (
     <div className="App">
     <div>

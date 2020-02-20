@@ -22,7 +22,7 @@ const App = () => {
             }
             
             return (
-              <MyComponent drizzle={drizzle} drizzleState={drizzleState}></MyComponent>
+              <MyComponent drizzle={drizzle} drizzleState={drizzleState} />
               )
             }}
         </DrizzleContext.Consumer>
