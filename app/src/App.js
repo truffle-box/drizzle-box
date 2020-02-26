@@ -1,12 +1,11 @@
 import { DrizzleContext } from "@drizzle/react-plugin";
-import { Drizzle, generateStore } from "@drizzle/store";
+import { Drizzle } from "@drizzle/store";
 import React from "react";
 import "./App.css";
 import drizzleOptions from "./drizzleOptions";
 import MyComponent from "./MyComponent";
 
-const drizzleStore = generateStore(drizzleOptions);
-const drizzle = new Drizzle(drizzleOptions, drizzleStore)
+const drizzle = new Drizzle(drizzleOptions)
 
 const App = () => {
   return (
