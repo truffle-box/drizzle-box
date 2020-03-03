@@ -1,9 +1,9 @@
+import React from "react";
 import { DrizzleContext } from "@drizzle/react-plugin";
 import { Drizzle } from "@drizzle/store";
-import React from "react";
-import "./App.css";
 import drizzleOptions from "./drizzleOptions";
 import MyComponent from "./MyComponent";
+import "./App.css";
 
 const drizzle = new Drizzle(drizzleOptions);
 
