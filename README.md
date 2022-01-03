@@ -70,6 +70,6 @@ First ensure you are in a new and empty directory.
 
     This box is a marriage of [Truffle](http://truffleframework.com/) and a React setup created with [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Either one would be a great place to start!
 
-* __How does the provider work in this box?
+* __How does the provider work in this box?__
 
    This box uses a custom provider, which does not interact with MetaMask. Keep an eye on this space, as this will be updated once Drizzle can sync up with MetaMask. 
